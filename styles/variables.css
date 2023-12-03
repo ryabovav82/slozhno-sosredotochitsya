@@ -1,4 +1,18 @@
 /*
   Переменные для вашего проекта
   и их переопределение под различные устройства
+
 */
+:root {
+  --bg-color: #000028;
+  --text-color: #F1B2CE;
+  --hightlight-text: #000028;
+  --bg-hightlight: #FF0070;
+  --accent-color: #FF0070;
+  --indent-bg: 50px;
+  --accent-text-color: #000028;
+  --title-color: #DB00FF;
+  --rec-color: #FF0070;
+  --shadow-title: #FF0070;
+  --button-hover: rgba(255, 0, 111, 0.4);
+}

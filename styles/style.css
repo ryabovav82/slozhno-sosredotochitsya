@@ -1,5 +1,330 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  min-inline-size: 375px;
+  max-inline-size: 1024px;
+  background-color: var(--bg-color);
+  font-family: IBM Plex Mono;
+  background-image: url(../images/cover-image-dark.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.title-decor {
+  color: var(--accent-text-color);
+  font-weight: 700;
+  background-color: var(--bg-hightlight);
+}
+
+h5.title-decor {
+  font-weight: 400;
+}
+
+.container {
+  padding: 0 10px 0 10px;
+}
+
+.main-text {
+  color: var(--text-color);
+}
+
+.link-decor {
+  text-shadow: 2px 2px 0px var(--shadow-title);
+}
+
+.link-decor:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.link-decor:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.indent-bg {
+  margin-block-start: var(--indent-bg);
+}
+
+.indent-md {
+  margin-block-start: 20px;
+}
+
+.indent-sm {
+  margin-block-start: 10px;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: 10px;
+  height: 100vh;
+  margin-block-end: 40px;
+}
+
+.decor-rec {
+  position: absolute;
+  right: 39px;
+  top: 12px;
+  color: var(--rec-color);
+}
+
+.decor-rec::after {
+  position: absolute;
+  content: '';
+  height: 9px;
+  width: 9px;
+  right: -20px;
+  top: 6px;
+  border-radius: 50%;
+  background-color: var(--rec-color);
+  box-shadow: 0px 0px 2px 2px var(--rec-color);
+}
+
+.decorated-zone::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+  right: 10px;
+  top: 10px;
+}
+
+.decorated-zone::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+  left: 10px;
+  bottom: 10px;
+}
+
+.header__theme-menu {
+  display: grid;
+  justify-content: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  align-self: center;
+}
+
+.header__theme-menu-item {
+  color: var(--accent-color);
+  text-align: center;
+  line-height: 100%;
+}
+
+.header__theme-menu-button {
+  text-transform: lowercase;
+  background-color: transparent;
+  padding: 2px 11px 3px 13px;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.heading {
+  font-size: clamp(8.3125rem, 9.0898rem + -3.3163vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0px var(--shadow-title);
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+.header__text{
+  align-self: center;
+  white-space: pre-line;
+}
+
+.section__title {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.pictures-wrap {
+  display: grid;
+  gap: 10px;
+}
+
+.img-style {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  block-size: 100vh;
+  margin-block-start: 40px;
+}
+
+.footer-decor {
+  align-self: center;
+  justify-self: center;
+  text-shadow: 2px 2px 0px var(--shadow-title);
+}
+
+@media (width > 571px) {
+  :root {
+    --indent-bg: 80px;
+  }
+
+  .container {
+    padding: 0 20px 0 20px;
+  }
+
+  .header__text {
+    display: flex;
+    justify-content: end;
+  }
+
+  .header__text-wrap {
+    inline-size: 50%;
+  }
+
+  .header{
+    padding: 20px;
+    margin-block-end: 60px;
+  }
+
+  .wrap-two-colomn .indent-md:first-child {
+    margin-block-start: 0px;
+  }
+
+  .heading {
+    position: relative;
+    left: -20px;
+  }
+
+  .decorated-zone::after {
+    right: 20px;
+    top: 20px;
+  }
+  .decorated-zone::before {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .decor-rec {
+    right: 48px;
+    top: 21px;
+  }
+
+  .wrap-two-colomn {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .limiter {
+    inline-size: 30%;
+  }
+
+  .pictures-wrap {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1.5fr;
+    grid-template-areas:
+      "one one two"
+      "three four two"
+      "three five five";
+    aspect-ratio: 984/1048;
+  }
+
+  .picture-one {
+    grid-area: one;
+  }
+
+  .picture-two {
+    grid-area: two;
+  }
+
+  .picture-three {
+    grid-area: three;
+  }
+
+  .picture-four {
+    grid-area: four;
+  }
+
+  .picture-five {
+    grid-area: five;
+  }
+
+  .pictures-wrap.indent-sm {
+    margin-block-start: 20px;
+  }
+
+  .footer {
+    margin-block-start: 60px;
+  }
+
+  .footer-decor {
+    padding-left: 40px;
+  }
+} 
+
+@media (width > 767px) {
+  .heading {
+    font-size: clamp(7.625rem, 1.0625rem + 13.6719vw, 9.8125rem);
+  }
+}
+
+@media (width > 896px) {
+  .heading {
+    font-size: clamp(7.625rem, -3.0071rem + 22.179vw, 11.1875rem);
+  }
+
+  .header__theme-menu {
+    display: grid;
+    justify-content: center;
+  }
+  
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    align-self: flex-start;
+  }
+
+  .header__text-wrap,
+  .section__title,
+  .main-text {
+    line-height: 23.4px;
+  }
+
+  .wrap-two-colomn {
+    grid-template-columns: 1fr 2fr;
+    gap: 11px;
+  }
+  
+  .wrap-horizontal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 }
