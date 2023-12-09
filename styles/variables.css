@@ -4,15 +4,18 @@
 
 */
 :root {
-  --bg-color: #000028;
+  --background-color: #000028;
   --text-color: #F1B2CE;
-  --hightlight-text: #000028;
-  --bg-hightlight: #FF0070;
+  --background-hightlight: #FF0070;
   --accent-color: #FF0070;
-  --indent-bg: 50px;
+  --indent: 50px;
   --accent-text-color: #000028;
   --title-color: #DB00FF;
   --rec-color: #FF0070;
   --shadow-title: #FF0070;
   --button-hover: rgba(255, 0, 111, 0.4);
+  --font: "IBM Plex Mono";
+  --font-bold: 700;
+  --font-normal: 400;
+  --main-size: 18px;
 }

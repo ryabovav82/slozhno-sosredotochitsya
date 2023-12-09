@@ -1,12 +1,10 @@
 .page {
-  font-size: 18px;
+  font-size: var(--main-size);
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
-  min-inline-size: 375px;
-  max-inline-size: 1024px;
-  background-color: var(--bg-color);
-  font-family: IBM Plex Mono;
+  background-color: var(--background-color);
+  font-family: var(--font), monospace;
   background-image: url(../images/cover-image-dark.png);
   background-size: cover;
   background-position: center;
@@ -14,14 +12,27 @@
   background-attachment: fixed;
 }
 
-.title-decor {
+h3 {
   color: var(--accent-text-color);
-  font-weight: 700;
-  background-color: var(--bg-hightlight);
+  font-weight: var(--font-bold);
 }
 
-h5.title-decor {
-  font-weight: 400;
+h3 {
+  margin-top: 20px;
+}
+
+h4 {
+  color: var(--accent-text-color);
+  margin-top: 20px;
+}
+
+.title-decor {
+  background-color: var(--background-hightlight);
+}
+
+h5 {
+  font-weight: var(--font-normal);
+  color: var(--accent-text-color);
 }
 
 .container {
@@ -30,6 +41,8 @@ h5.title-decor {
 
 .main-text {
   color: var(--text-color);
+  margin-top: 10px;
+  margin-block-end: 0px;
 }
 
 .link-decor {
@@ -44,24 +57,16 @@ h5.title-decor {
   outline: 1px solid var(--text-color);
 }
 
-.indent-bg {
-  margin-block-start: var(--indent-bg);
-}
-
-.indent-md {
-  margin-block-start: 20px;
-}
-
-.indent-sm {
-  margin-block-start: 10px;
-}
+.indent {
+  margin-block-start: var(--indent);
+} 
 
 .header {
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   padding: 10px;
-  height: 100vh;
+  min-height: 100vh;
   margin-block-end: 40px;
 }
 
@@ -134,6 +139,7 @@ h5.title-decor {
 
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-color);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
@@ -148,21 +154,31 @@ h5.title-decor {
   font-size: clamp(8.3125rem, 9.0898rem + -3.3163vw, 7.5rem);
   color: var(--title-color);
   text-shadow: 4px 4px 0px var(--shadow-title);
-  font-weight: 700;
+  font-weight: var(--font-bold);
   line-height: 82.5%;
 }
 
-.header__text{
+.header__text {
+  display: flex;
+}
+
+.header__text-wrap {
+  color: var(--accent-text-color);
+  font-weight: var(--font-bold);
   align-self: center;
+  align-content: center;
   white-space: pre-line;
+  inline-size: 100%;
 }
 
 .section__title {
   color: var(--accent-color);
-  font-weight: 700;
+  font-weight: var(--font-bold);
+  margin-block-end: 20px;
 }
 
 .pictures-wrap {
+  margin-top: 10px;
   display: grid;
   gap: 10px;
 }
@@ -177,7 +193,7 @@ h5.title-decor {
   position: relative;
   display: grid;
   grid-template-rows: 1fr;
-  block-size: 100vh;
+  min-block-size: 100vh;
   margin-block-start: 40px;
 }
 
@@ -189,15 +205,22 @@ h5.title-decor {
 
 @media (width > 571px) {
   :root {
-    --indent-bg: 80px;
+    --indent: 80px;
+  }
+
+  h3:first-child {
+    margin-block-start: 0;
+  }
+
+  .article {
+    margin-block-start: 20px;
   }
 
   .container {
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
   }
 
   .header__text {
-    display: flex;
     justify-content: end;
   }
 
@@ -208,15 +231,6 @@ h5.title-decor {
   .header{
     padding: 20px;
     margin-block-end: 60px;
-  }
-
-  .wrap-two-colomn .indent-md:first-child {
-    margin-block-start: 0px;
-  }
-
-  .heading {
-    position: relative;
-    left: -20px;
   }
 
   .decorated-zone::after {
@@ -241,42 +255,39 @@ h5.title-decor {
 
   .limiter {
     inline-size: 30%;
-  }
+  } 
 
   .pictures-wrap {
+    margin-block-start: 20px;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr 1.5fr;
     grid-template-areas:
-      "one one two"
-      "three four two"
-      "three five five";
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
     aspect-ratio: 984/1048;
   }
 
-  .picture-one {
-    grid-area: one;
+  .picture-sunset {
+    grid-area: sunset;
   }
 
-  .picture-two {
-    grid-area: two;
+  .picture-ice-cream {
+    grid-area: ice-cream;
   }
 
-  .picture-three {
-    grid-area: three;
+  .picture-tape {
+    grid-area: tape;
   }
 
-  .picture-four {
-    grid-area: four;
+  .picture-books {
+    grid-area: books;
   }
 
-  .picture-five {
-    grid-area: five;
-  }
-
-  .pictures-wrap.indent-sm {
-    margin-block-start: 20px;
+  .picture-street {
+    grid-area: street;
   }
 
   .footer {
@@ -289,14 +300,29 @@ h5.title-decor {
 } 
 
 @media (width > 767px) {
+
+  .heading {
+    position: relative;
+    margin-inline-start: -20px;
+  }
+  
+  .heading:last-child {
+    margin-inline-start: -40px;
+  }
+  
   .heading {
     font-size: clamp(7.625rem, 1.0625rem + 13.6719vw, 9.8125rem);
   }
+
 }
 
 @media (width > 896px) {
   .heading {
     font-size: clamp(7.625rem, -3.0071rem + 22.179vw, 11.1875rem);
+  }
+
+  .article {
+    margin: 0;
   }
 
   .header__theme-menu {
@@ -305,9 +331,7 @@ h5.title-decor {
   }
   
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
-    gap: 13px;
     align-self: flex-start;
   }
 

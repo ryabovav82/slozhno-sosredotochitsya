@@ -1,19 +1,20 @@
-.page.theme_light {
-  --bg-color: #FFC2E6;
-  --text-color: #353430;
-  --hightlight-text: #353430;
-  --bg-hightlight: #FF8DCB;
-  --accent-color: #353430;
-  --accent-text-color: #353430;
-  --title-color: #FFC2E6;
-  --rec-color: transparent;
-  --shadow-title: #FF8DCB;
-  --button-hover: rgba(50, 49, 45, 0.40);
-  background-image: url(../images/cover-image-light.png);
-}
 
-@media (width > 896px) {
   .page.theme_light {
-    --shadow-title: #FF0070;
+    --bg-color: #FFC2E6;
+    --text-color: #353430;
+    --hightlight-text: #353430;
+    --bg-hightlight: #FF8DCB;
+    --accent-color: #353430;
+    --accent-text-color: #353430;
+    --title-color: #FFC2E6;
+    --rec-color: transparent;
+    --shadow-title: #FF8DCB;
+    --button-hover: rgba(50, 49, 45, 0.40);
+    background-image: url(../images/cover-image-light.png);
   }
-}
+
+  @media (width > 896px) {
+    .page.theme_light {
+      --shadow-title: #FF0070;
+    }
+  }
